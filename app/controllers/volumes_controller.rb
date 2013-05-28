@@ -1,19 +1,15 @@
 class VolumesController < ApplicationController
+
   # GET /volumes
   def index
-    @volumes = GoogleBooks.search('ruby on rails', {:count=>10,:page=>1})
+    # TODO: There must be a better way to ensure that @page is 1 or greater.
+    @page = params[:page].to_i if params.has_key?(:page)
+    @page = 1 if @page.nil? || @page < 1
+    @volumes = GoogleBooks.search('ruby on rails', {:count=>10,:page=>@page})
+    # Pagination
     @total_items = @volumes.total_items
-  end
-
-  # GET /volumes/1
-  # GET /volumes/1.json
-  def show
-    @volume = Volume.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @volume }
-    end
+    page_size = 10.0 # ensure floating point division when calculating page_count
+    @page_count = (@total_items / page_size).ceil
   end
 
 end
