@@ -1,0 +1,12 @@
+<h1>Ruby on rails books via Google Books API</h1>
+<p>This time Google claims there are a total of <%= @total_items %> Rails books.</p>
+
+<ul>
+	<% @volumes.each do |volume| %>
+	  <li>
+			<div class="book_image"><img src="<%= volume.image_link(:zoom => 5, :curl => true) %>"></div>
+			<div class="book_title"><%= volume.title %></div>
+			<div class="book_authors"><%= volume.authors %></div>
+		</li>
+	<% end %>
+</ul>
