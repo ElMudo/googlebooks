@@ -1,3 +1,25 @@
 // Place all the styles related to the Volumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book_list {
+	margin: 15px 0;
+	li {
+		list-style: none outside none;
+		margin-bottom: 20px;
+	}
+	.book_cover {
+		float: left;
+	}
+	.book_detail {
+		margin-left: 74px;
+		.book_title {
+			font-weight: bold;
+		}
+		.book_authors {
+			font-style: italic;
+		}
+	}
+}
+
+
