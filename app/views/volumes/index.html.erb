@@ -7,10 +7,10 @@
 <ul class="book_list">
 	<% @volumes.each do |volume| %>
 	  <li>
-			<div>
+			<div class="book">
 				<div class="book_cover"><img src="<%= volume.image_link(:zoom => 5) %>"></div>
 				<div class="book_detail">
-					<div class="book_title"><%= volume.title %></div>
+					<div class="book_title"><%= book_title(volume.title) %></div>
 					<div class="book_authors"><%= volume.authors %></div>
 				</div>
 				<div style="clear:left"></div>

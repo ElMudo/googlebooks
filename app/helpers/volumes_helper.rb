@@ -26,4 +26,15 @@ module VolumesHelper
     return raw html
   end
   
+  # Shorten the book title for display.
+  # Some book titles have multiple subtitles (e.g. Aptana RadRails). Use only
+  # the title and first subtitle.
+  def book_title( raw_title )
+    parts = raw_title.split(":")
+    if parts.count > 2
+      parts.slice!(2, parts.count-2)
+    end
+    return parts.join(': ')
+  end
+  
 end
