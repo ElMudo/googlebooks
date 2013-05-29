@@ -8,6 +8,14 @@
 		list-style: none outside none;
 		margin-bottom: 20px;
 	}
+	.book {
+		&:hover {
+			background: #E0E0F0;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
 	.book_cover {
 		float: left;
 	}
@@ -22,7 +30,5 @@
 	}
 }
 
-.book.hover {
-	background: #E0E0F0;
-}
+
 

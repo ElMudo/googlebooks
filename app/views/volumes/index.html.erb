@@ -8,11 +8,13 @@
 	<% @volumes.each do |volume| %>
 	  <li>
 			<div class="book">
-				<div class="book_cover"><img src="<%= volume.image_link(:zoom => 5) %>"></div>
-				<div class="book_detail">
-					<div class="book_title"><%= book_title(volume.title) %></div>
-					<div class="book_authors"><%= volume.authors %></div>
-				</div>
+				<a href="http://books.google.nl/books?id=<%= volume.id %>">
+					<div class="book_cover"><img src="<%= volume.image_link(:zoom => 5) %>"></div>
+					<div class="book_detail">
+						<div class="book_title"><%= book_title(volume.title) %></div>
+						<div class="book_authors"><%= volume.authors %></div>
+					</div>
+				</a>
 				<div style="clear:left"></div>
 			</div>
 		</li>
