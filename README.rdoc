@@ -22,14 +22,14 @@ e. anything you think creates value to this kick ass app
 === Regarding the requirements:
 1. Why are only those three details to be shown per item? This results in a fairly minimalistic webpage. And no functionality? No link to the book detail page? Or a book preview?
 2. Is this a requirement or a statement that Google Books API limits the number of calls? This implementation does not impose any traffic limitations.
-3. The app has not been tested for performance. It's on the to-do list.
+3. The app has not been properly performance tested. I doubt it will handle 5000 requests per minute running on a 2008 MacBook Pro.
 
 === Regarding the nice-to-haves:
 a. See remark about requirement 3.
 b. I am not a web designer. No design was supplied, nor even a vague sketch of how the pages should look or be styled. A simple, mininalistic design has been created making use of Twitter Bootstrap.
 c. Neither HAML nor AJAX have been used. CoffeeScript and SCSS have been used, but due to the minimalistic design, they have not been used much.
 d. The app is deployed on Heroku: http://conorsgooglebooks.herokuapp.com
-e. I could add links to the book detail page, previewing using Javascript, searching by author and some eye-candy. I will look into these.
+e. I could add links to the book preview page, searching by author, changing sorting ordering and some eye-candy. I will look into these.
 
 === Regarding Google Books API:
 The API does not inspire confidence. The API reports the total number of matching books as different on almost request. And this is not an ever increasing number due to books being continually added. Some details are missing from the results. For example, there is no author for thw Wrox book "Professional Ruby on Rails". The normal Google website display "Noel Rappin" as the author but the API does not return an authors field for this book. These can be verified by using the test facility that Google supplies, namely https://developers.google.com/books/docs/v1/reference/volumes/list#try-it. It would seem that Google's own search functionality is based on a different version of the API than that made available to developers.
@@ -42,4 +42,4 @@ The API does not inspire confidence. The API reports the total number of matchin
 * Filter books by author.
 * Implement responsive design.
 * Get feedback! The requirements were too minimalistic so I find myself trying to think up stuff to implement just "for the hell of it".
-* Implement tests. I found this difficult to approach from a TDD perspective. The sample Rails projects I have worked with until now have lent themselves very nicely to TDD, but this one didn't (I could think of only a few test cases but didn't implement them).
+* Implement tests. I found this difficult to approach from a TDD perspective. The sample Rails projects I have worked with until now have lent themselves very nicely to TDD, but this one didn't.

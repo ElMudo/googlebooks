@@ -1,4 +1,8 @@
 <h3>Ruby on rails books via Google Books API</h3>
+<% if @volumes.nil? %>
+<h4>Oops!</h4>
+<p>No results found. Either nothing matched your criteria or there was a problem with the Google Books API (maybe the quota for requests has been used up).</p>
+<% else %>
 <p>Google seems to change its mind all the time about how many books match the query "ruby on rails". This time Google claims there are a total of <%= @total_items %> Rails books.</p>
 
 <% paginator_html = paginator(@page,@page_count) %>
@@ -22,3 +26,4 @@
 </ul>
 
 <%= paginator_html %>
+<% end %>

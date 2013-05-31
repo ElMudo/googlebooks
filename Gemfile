@@ -13,6 +13,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'ruby-prof'
+  gem 'test-unit'
 end
 
 gem 'googlebooks'
